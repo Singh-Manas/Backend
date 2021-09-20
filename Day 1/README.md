@@ -77,6 +77,9 @@
 
 - Postgres is a database which stores large volumes of data.
 - For entering into Postgres - `psql -U username`. Ex: `psql -U postgres`. 
+- In __ubuntu__, Postgres uses __ident__ authentication, which means role name in postgres should match with Linux User Account. If not, then we need to switch user account to __postgres__ which is created when we install psql.
+- `sudo -i -u postgres` - Switch to postgres account. `psql` - Now if run psql, we would be able to run it.
+- `sudo -u postgres psql` - Directly run psql prompt without switching accounts
 - `\q` - For exiting Postgres
 - `CREATE USER devsnest WITH PASSWORD 'password';` - Creating a User with Password
 - `CREATE DATABASE devs;` - For creating a database. __Database is just a collection of Tables.__
