@@ -1,0 +1,21 @@
+# Postgres 
+
+- __Schema__ is the skeleton structure that represents the logical view of the entire database. 
+- `CREATE SCHEMA mySchema` - To create a Schema
+- `CREATE TABLE mySchema.company(NAME INT);` - To Create Table in the Schema
+- `DROP SCHEMA mySchema CASCADE` - To Delete a Schema with all Dependencies
+- `INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (4,'Mark',25,'Rich-Mond',65000.00,'2007-12-13');` - Inserting Values inside the table
+- `SELECT * FROM company` - To See all data in Table Company.
+- We can also insert programming constructs in __Select__ statements. Ex: `SELECT (15+2) as addition`.
+- `SELECT COUNT(*) AS "Records" FROM COMPANY;` - Counting All Records from Company Table.
+- `SELECT * FROM COMPANY WHERE AGE >= 25 AND SALARY >= 65000;` - Selecting Rows in Table based on a Condition.
+- `SELECT CURRENT_TIMESTAMP` - Print Current TimeStamp.
+- `SELECT * FROM COMPANY WHERE NAME LIKE 'P%'` - Print rows where Name Starts with __P__. Here % signifies that it can have any number of characters after letter P.
+- `SELECT * FROM COMPANY WHERE NAME LIKE 'P_ul'` - Print rows where name starts with __P__ and ends with __ul__  and has a missing letter in betwwen.
+- `SELECT * FROM COMPANY WHERE SALARY::TEXT LIKE '200%` - Since Salary data type is __Real__, we need to typecast it first before we can use __LIKE__ Operator.
+- `SELECT * FROM COMPANY WHERE AGE BETWEEN 25 AND 27` - Between is used to select a range of values in between.
+- `SELECT * FROM COMPANY WHERE AGE IN (25,27)` - Similar to Between, Select a range of values.
+- `UPDATE COMPANY SET SALARY = 15000 WHERE ID = 3;` - Update a Column with condition.
+- `UPDATE COMPANY SET ADDRESS = 'Texas', SALARY = 20000 WHERE ID = 2;` - Update multiple columns
+- `DELETE FROM COMPANY WHERE ID = 2` - Delete a Row based on a Condition.
+- __Foreign Keys Concept is used to connect two tables. Primary Key of one table becomes foreign key of another table.__
